@@ -26,7 +26,7 @@ function weightedSumLeakyRelu(weights, biases, inputs) {
     sum += weights[this.thread.x][k] * inputs[k];
   }
   // leaky relu
-  return sum < 0 ? 0 : 0.01 * sum;
+  return sum < 0 ? 0.01 * sum : sum;
 }
 
 function weightedSumTanh(weights, biases, inputs) {
